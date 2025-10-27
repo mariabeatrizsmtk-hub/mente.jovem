@@ -7,9 +7,8 @@ const chatSuggestions = document.getElementById('chat-suggestions');
 const allCloseButtons = document.querySelectorAll('.btn-close');
 
 function showChat(type) {
-  mainScreen.style.display = 'none';
-  chatScreen.style.display = 'flex';
-  chatScreen.style.flexDirection = 'column';
+  mainScreen.style.display = 'none'; // tela inicial desaparece
+  chatScreen.style.display = 'flex'; // chat full screen
   chatBody.innerHTML = '';
   chatTitle.textContent = type;
   setSuggestionColor(type);
@@ -18,10 +17,10 @@ function showChat(type) {
 
 function setSuggestionColor(type) {
   const suggestions = chatSuggestions.querySelectorAll('.suggestion');
-  suggestions.forEach(s => s.classList.remove('suggestion-purple', 'suggestion-yellow', 'suggestion-green'));
-  if (type === 'Conversar') suggestions.forEach(s => s.classList.add('suggestion-purple'));
-  else if (type === 'Desabafar') suggestions.forEach(s => s.classList.add('suggestion-yellow'));
-  else if (type === 'Dicas') suggestions.forEach(s => s.classList.add('suggestion-green'));
+  suggestions.forEach(s => s.classList.remove('suggestion-purple','suggestion-yellow','suggestion-green'));
+  if(type === 'Conversar') suggestions.forEach(s => s.classList.add('suggestion-purple'));
+  else if(type === 'Desabafar') suggestions.forEach(s => s.classList.add('suggestion-yellow'));
+  else if(type === 'Dicas') suggestions.forEach(s => s.classList.add('suggestion-green'));
 }
 
 function closeChat() {
@@ -29,10 +28,6 @@ function closeChat() {
   chatBody.innerHTML = '';
   chatTitle.textContent = 'Chat';
   mainScreen.style.display = 'flex';
-  mainScreen.style.flexDirection = 'column';
-  mainScreen.style.justifyContent = 'center';
-  mainScreen.style.alignItems = 'center';
-  mainScreen.style.height = '100vh';
 }
 
 function addMessage(text, type) {
@@ -44,22 +39,20 @@ function addMessage(text, type) {
 }
 
 chatSuggestions.addEventListener('click', e => {
-  if (e.target.classList.contains('suggestion')) {
-    addMessage(e.target.textContent, 'user');
-  }
+  if(e.target.classList.contains('suggestion')) addMessage(e.target.textContent,'user');
 });
 
 chatForm.addEventListener('submit', e => {
   e.preventDefault();
   const input = chatForm.querySelector('input');
-  if (input.value.trim() !== '') {
-    addMessage(input.value.trim(), 'user');
+  if(input.value.trim() !== '') {
+    addMessage(input.value.trim(),'user');
     input.value = '';
   }
 });
 
-document.getElementById('btn-conversar').addEventListener('click', () => showChat('Conversar'));
-document.getElementById('btn-desabafar').addEventListener('click', () => showChat('Desabafar'));
-document.getElementById('btn-dicas').addEventListener('click', () => showChat('Dicas'));
-
+document.getElementById('btn-conversar').addEventListener('click', ()=> showChat('Conversar'));
+document.getElementById('btn-desabafar').addEventListener('click', ()=> showChat('Desabafar'));
+document.getElementById('btn-dicas').addEventListener('click', ()=> showChat('Dicas'));
 allCloseButtons.forEach(btn => btn.addEventListener('click', closeChat));
+
