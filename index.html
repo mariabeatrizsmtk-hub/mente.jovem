@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mente Jovem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tela inicial -->
+  <div class="container" id="main-screen">
+    <div class="logo">
+      <div class="heart-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24">
+          <path fill="#CDB7F6" stroke="#6B4C9A" stroke-width="1.6" d="M12 2C7 2 3 5.7 3 10c0 2.7 1.7 5 4.3 6.4L6 22l4.6-3c.4 0 .8 0 1.4 0 5 0 9-3.7 9-8S17 2 12 2z"/>
+          <path fill="#F9E26F" stroke="#6B4C9A" stroke-width="1.2" d="M12 13.5l-3.3-3.3a2.3 2.3 0 0 1 3.3-3.3 2.3 2.3 0 0 1 3.3 3.3L12 13.5z"/>
+        </svg>
+      </div>
+      <h1>Mente Jovem</h1>
+    </div>
+
+    <p class="welcome-text">Bem-vindo(a) a um cantinho só seu <span class="heart">❤</span></p>
+
+    <button id="btn-conversar" class="btn btn-purple">Quero conversar</button>
+    <button id="btn-desabafar" class="btn btn-yellow">Quero desabafar</button>
+    <button id="btn-dicas" class="btn btn-green">Quero dicas</button>
+  </div>
+
+  <!-- Chat -->
+  <div class="chat-screen" id="chat-screen">
+    <header class="chat-header">
+      <span id="chat-title">Chat</span>
+      <button class="btn-close" aria-label="Fechar chat">&times;</button>
+    </header>
+
+    <div class="chat-body" id="chat-body"></div>
+
+    <div class="chat-suggestions" id="chat-suggestions">
+      <div class="suggestion">Oi!</div>
+      <div class="suggestion">Estou bem</div>
+      <div class="suggestion">Não muito...</div>
+      <div class="suggestion">Me conte mais</div>
+    </div>
+
+    <form class="chat-input-form" id="chat-form">
+      <input type="text" placeholder="Digite sua mensagem..." autocomplete="off">
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
