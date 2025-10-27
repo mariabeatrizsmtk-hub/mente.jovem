@@ -101,7 +101,7 @@ body, html {
 }
 
 .chat-body {
-  flex: 1;
+  flex: 1 1 auto;
   padding: 1rem;
   overflow-y: auto;
   display: flex;
@@ -135,6 +135,7 @@ body, html {
   padding: 0.7rem 1rem;
   border-top: 1px solid #ccc;
   background: #fff;
+  flex-shrink: 0; /* mantém o input visível quando o teclado abrir */
 }
 
 .chat-input-form input[type="text"] {
@@ -181,12 +182,20 @@ body, html {
   color: #fff;
 }
 
-/* RESPONSIVO */
+/* ===== MOBILE SPECIFIC ===== */
 @media (max-width: 800px) {
   #main-screen, .chat-screen {
     width: 100%;
     height: 100%;
   }
+
+  .chat-body {
+    margin-bottom: env(safe-area-inset-bottom); /* espaço extra para iPhones */
+  }
+
+  .chat-input-form {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
 }
-
-
