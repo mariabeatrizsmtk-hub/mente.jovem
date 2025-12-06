@@ -4,10 +4,11 @@
   padding: 0;
 }
 
-body, html {
+body,
+html {
   width: 100%;
   height: 100%;
-  font-family: 'Nunito', 'Poppins', sans-serif;
+  font-family: "Nunito", "Poppins", sans-serif;
   background: #dcc8f8;
   color: #3c2e65;
   overflow: hidden; /* evita scroll na tela inicial */
@@ -63,9 +64,18 @@ body, html {
   cursor: pointer;
 }
 
-.btn-purple { background: #6b4c9a; color: #fff; }
-.btn-yellow { background: #fff09b; color: #3c2e65; }
-.btn-green { background: #b9d9a5; color: #3c2e65; }
+.btn-purple {
+  background: #6b4c9a;
+  color: #fff;
+}
+.btn-yellow {
+  background: #fff09b;
+  color: #3c2e65;
+}
+.btn-green {
+  background: #b9d9a5;
+  color: #3c2e65;
+}
 
 /* ===== CHAT FULL SCREEN ===== */
 .chat-screen {
@@ -127,7 +137,7 @@ body, html {
   background: #fff;
   color: #3c2e65;
   align-self: flex-end;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .chat-input-form {
@@ -182,9 +192,75 @@ body, html {
   color: #fff;
 }
 
+/* ===== EMERGENCY ALERT ===== */
+.emergency-alert {
+  background: #ffe5e5;
+  border: 2px solid #ff4444;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.1);
+  animation: alertFadeIn 0.5s ease-out;
+}
+
+.emergency-alert h2 {
+  color: #ff4444;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.emergency-alert p {
+  color: #3c2e65;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.emergency-contacts {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.emergency-contacts p strong {
+  color: #ff4444;
+}
+
+.emergency-contacts ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.emergency-contacts li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ffe5e5;
+  color: #3c2e65;
+  font-weight: 600;
+}
+
+.emergency-contacts li:last-child {
+  border-bottom: none;
+}
+
+@keyframes alertFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ===== MOBILE SPECIFIC ===== */
 @media (max-width: 800px) {
-  #main-screen, .chat-screen {
+  #main-screen,
+  .chat-screen {
     width: 100%;
     height: 100%;
   }
