@@ -1,5 +1,5 @@
 // Gemini Configuration
-const API_KEY = "AIzaSyCo2-vFw19t8mqOMDCnaAscbm5WKk0Vipg";
+const API_KEY = "";
 
 const mainScreen = document.getElementById("main-screen");
 const chatScreen = document.getElementById("chat-screen");
@@ -323,4 +323,5 @@ document
   .getElementById("btn-dicas")
   .addEventListener("click", () => showChat("Dicas"));
 allCloseButtons.forEach((btn) => btn.addEventListener("click", closeChat));
+
 
